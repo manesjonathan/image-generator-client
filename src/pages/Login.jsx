@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {URL} from "../config/config.js";
 
 function Login() {
     const [email, setEmail] = useState("")
@@ -14,11 +15,14 @@ function Login() {
             password: password
         }
 
-        axios.post('http://10.22.14.204:8080/user/login', user).then(res => {
-            localStorage.setItem("jwt", res.data);
-            navigate("/image");
-
-        })
+        try {
+            axios.post(`${URL}/user/login`, user).then(res => {
+                localStorage.setItem("jwt", res.data.token);
+                navigate("/dashboard");
+            })
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     return (
