@@ -1,36 +1,52 @@
 import axios from "axios";
 import {useState} from "react";
 import {URL} from "../config/config.js";
+import {CircleLoader} from "react-spinners";
 
 function ImagePrompt() {
     const [prompt, setPrompt] = useState("")
+    const [url, setUrl] = useState("")
+    const [isLoading, setIsLoading] = useState(true)
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        axios.defaults.headers.common['Authorization'] = localStorage.getItem("jwt");
+        axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem("jwt");
         axios.post(`${URL}/image/generate`, prompt).then(res => {
-            console.log(res.data);
+            setUrl(res.data);
+            setIsLoading(false)
         })
     }
 
     return (
-        <form className="space-y-4 md:space-y-6" method="post" onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="text"
-                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                    text</label>
-                <input type="text" name="text" id="text"
-                       onChange={e => setPrompt(e.target.value)}
-                       className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                       placeholder="Enter something cool" required=""/>
-            </div>
+        <section className={'w-full min-h-screen bg-gray-800'}>
+            <article className={' items-center w-full'}>
+                <form className="p-8 m-auto items-center w-full" method="post" onSubmit={handleSubmit}>
+                    <div className={'flex'}>
+                        <label htmlFor="text"
+                               className="block w-full text-sm font-medium text-gray-900 dark:text-white">
+                            <input type="text" name="text" id="text"
+                                   onChange={e => setPrompt(e.target.value)}
+                                   className="m-auto w-full bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                   placeholder="Enter something cool" required=""/></label>
+                        <button type="submit"
+                                className="block ml-4 m-auto text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-orange-500">
+                            SEND
+                        </button>
+                    </div>
+                </form>
+            </article>
 
-            <button type="submit"
-                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign
-                in
-            </button>
-        </form>);
+
+            {(url &&
+                <article className={'w-full bg-gray-800'}>
+                    {(isLoading && <CircleLoader/>)}
+
+                    <img className={"m-auto shadow-xl "} width={512} height={512} src={url} alt=""/>
+                </article>
+            )}
+        </section>
+    );
 }
 
 export default ImagePrompt;

@@ -6,7 +6,7 @@ function App() {
     return (<BrowserRouter>
         <Routes>
             <Route path="/" element={<Login/>}></Route>
-            <Route path="/image" element={<ImagePrompt/>}></Route>
+            <Route path="/dashboard" element={<ImagePrompt/>}></Route>
         </Routes>
     </BrowserRouter>)
 }
