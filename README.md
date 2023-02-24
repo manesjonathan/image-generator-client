@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+<br/>
+<p align="center">
+  <h3 align="center">Image Generator API</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+    Image Generator API using Dall-E, Spring boot + Spring Security & Json Web Token
+    <br/>
+    <br/>
+    <a href="https://github.com/manesjonathan/image-generator/issues">Report Bug</a>
+    .
+    <a href="https://github.com/manesjonathan/image-generator/issues">Request Feature</a>
+  </p>
 
-## Available Scripts
+![Downloads](https://img.shields.io/github/downloads/manesjonathan/image-generator/total) ![Contributors](https://img.shields.io/github/contributors/manesjonathan/image-generator?color=dark-green) ![Forks](https://img.shields.io/github/forks/manesjonathan/image-generator?style=social) ![Stargazers](https://img.shields.io/github/stars/manesjonathan/image-generator?style=social) ![Issues](https://img.shields.io/github/issues/manesjonathan/image-generator)
 
-In the project directory, you can run:
+## About The Project
 
-### `npm start`
+![Screen Shot](demo.png)
+![Screen Shot](demo-2.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is created using Java Spring framework and OpenAI Dall-E API to generate image.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project use Spring Security to authenticate users using Json Web Token. The users are pre-registred in a Postgresql database.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get a local copy up and running follow these simple example steps.
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Get an API Key at [https://openai.com/]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Create a Postgresql database.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Clone the repo
 
-### `npm run eject`
+```sh
+git clone https://github.com/manesjonathan/image-generator.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Enter your database credentials and OpenAI API key in `application.properties`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/manesjonathan/image-generator/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
+* Please make sure you check your spelling and grammar.
+* Create individual PR for each suggestion.
+* Please also read through the [Code Of Conduct](https://github.com/manesjonathan/image-generator/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
 
-## Learn More
+### Creating A Pull Request
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+Distributed under the MIT License. See [LICENSE](https://github.com/manesjonathan/image-generator/blob/main/LICENSE.md) for more information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Authors
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [Jonathan Manes](https://github.com/manesjonathan/) - *Full Stack Developer*
