@@ -9,7 +9,7 @@ const Header = () => {
     }
 
     return (
-     <header className="w-full h-12 flex justify-between items-center fixed z-10 bg-blue-900">
+     <header className="w-full h-12 flex justify-between items-center fixed z-10 bg-indigo-900">
          <div className="flex items-center">
              <img src={Logo} alt="logo" className="w-10 h-10 ml-4"/>
              <h1 className="hidden sm:block text-xl text-white ml-2">Image Generator using Dall-E</h1>
