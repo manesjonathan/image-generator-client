@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import ImagePrompt from "./pages/ImagePrompt";
 import PrivateRoute from "./config/PrivateRoute";
 import Header from "./components/Header";
+import Gallery from "./pages/Gallery";
 
 function App() {
     return (
@@ -13,6 +14,12 @@ function App() {
                     <PrivateRoute>
                         <Header/>
                         <ImagePrompt/>
+                    </PrivateRoute>
+                }/>
+                <Route path="/gallery" element={
+                    <PrivateRoute>
+                        <Header/>
+                        <Gallery/>
                     </PrivateRoute>
                 }/>
             </Routes>

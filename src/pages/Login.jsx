@@ -3,7 +3,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {URL} from "../config/config.js";
 
-function Login() {
+const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
@@ -20,7 +20,7 @@ function Login() {
             axios.post(`${URL}/user/login`, user).then(res => {
                 localStorage.setItem("jwt", res.data);
                 navigate("/dashboard");
-            }).catch(error => {
+            }).catch(() => {
                 setError("Invalid email or password");
             })
         } catch (e) {
