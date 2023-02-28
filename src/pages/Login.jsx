@@ -19,7 +19,7 @@ const Login = () => {
         try {
             axios.post(`${URL}/user/login`, user).then(res => {
                 localStorage.setItem("jwt", res.data);
-                navigate("/dashboard");
+                navigate("/generate");
             }).catch(() => {
                 setError("Invalid email or password");
             })
@@ -55,6 +55,11 @@ const Login = () => {
                             <button type="submit"
                                     className="mt-8  w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800 bg-indigo-900 hover:bg-orange-500">LOGIN
                             </button>
+
+                            <p className="mt-8 text-sm text-gray-50 text-end">
+                                Don’t have an account yet? <a href="/signup" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
+                                up</a>
+                            </p>
 
                             {error && (
                                 <p className="mt-4 text-sm text-bold text-black animate-bounce">{error}</p>

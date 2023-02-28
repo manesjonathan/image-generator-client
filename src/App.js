@@ -3,14 +3,16 @@ import Login from "./pages/Login";
 import ImagePrompt from "./pages/ImagePrompt";
 import PrivateRoute from "./config/PrivateRoute";
 import Header from "./components/Header";
-import Gallery from "./pages/Gallery";
+import ImageGallery from "./pages/ImageGallery";
+import Signup from "./pages/Signup";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login/>}/>
-                <Route path="/dashboard" element={
+                <Route path="/signup" element={<Signup/>}/>
+                <Route path="/generate" element={
                     <PrivateRoute>
                         <Header/>
                         <ImagePrompt/>
@@ -19,7 +21,7 @@ function App() {
                 <Route path="/gallery" element={
                     <PrivateRoute>
                         <Header/>
-                        <Gallery/>
+                        <ImageGallery/>
                     </PrivateRoute>
                 }/>
             </Routes>

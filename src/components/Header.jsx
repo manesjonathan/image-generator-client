@@ -15,6 +15,9 @@ const Header = () => {
             </div>
             <ul className="flex items-center ">
                 <li>
+                    <a className="text-white mr-4" href='/generate'>Generate</a>
+                </li>
+                <li>
                     <a className="text-white mr-4" href='/gallery'>Gallery</a>
                 </li>
                 <li>
