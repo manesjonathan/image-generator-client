@@ -5,7 +5,7 @@ import PrivateRoute from "./config/PrivateRoute";
 import Navbar from "./components/Navbar";
 import ImageGallery from "./pages/ImageGallery";
 import Signup from "./pages/Signup";
-import Payment from "./pages/Payment";
+import Refill from "./pages/Refill";
 
 function App() {
     return (
@@ -13,10 +13,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login/>}/>
                 <Route path="/signup" element={<Signup/>}/>
-                <Route path="/payment" element={
+                <Route path="/refill" element={
                     <PrivateRoute>
                         <Navbar/>
-                        <Payment/>
+                        <Refill/>
                     </PrivateRoute>
                 }/>
                 <Route path="/generate" element={

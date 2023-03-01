@@ -47,7 +47,7 @@ export default function Navbar({fixed}) {
                             <li className="nav-item">
                                 <a
                                     className="px-3 py-2 flex  text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                                    href="/payment">
+                                    href="/refill">
                                     <span className="ml-2">Refill</span>
                                 </a>
                             </li>

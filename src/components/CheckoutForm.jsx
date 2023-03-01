@@ -57,7 +57,7 @@ export default function CheckoutForm() {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: "http://localhost:3000/payment"
+                return_url: "http://localhost:3000/refill"
             },
         });
 
@@ -90,7 +90,7 @@ export default function CheckoutForm() {
                 />
                 <PaymentElement id="payment-element" options={paymentElementOptions}/>
                 <button
-                    className={'mt-8 mx-auto w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800 bg-indigo-900 hover:bg-orange-500'}
+                    className={'mt-8 mx-auto w-full text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-primary-800 bg-indigo-600 hover:bg-orange-500'}
                     disabled={isLoading || !stripe || !elements} id="submit">
                         <span id="button-text">
                             {isLoading ? (
