@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react";
-import {loginFunction, URL} from "../config/config.js";
+import {URL} from "../config/config.js";
+import {loginFunction} from "../config/UtilService.js";
 import {useNavigate} from "react-router-dom";
 
 const Signup = () => {

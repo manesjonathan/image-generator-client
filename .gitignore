@@ -24,4 +24,4 @@ yarn-error.log*
 /.idea/
 /package-lock.json
 
-/src/config/config.js
+src/config/config.js

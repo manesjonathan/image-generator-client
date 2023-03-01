@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {loginFunction} from "../config/config.js";
+import {loginFunction} from "../config/UtilService.js";
 
 const Login = () => {
     const [email, setEmail] = useState("")
