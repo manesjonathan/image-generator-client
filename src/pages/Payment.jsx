@@ -32,7 +32,7 @@ const Signup = () => {
     return (
         <main className={'h-screen flex h-screen w-full items-center justify-center p-12'}>
             {clientSecret && (
-                <section className={'m-auto p-12 rounded-lg backdrop-filter backdrop-blur-md bg-transparent drop-shadow-2xl '}>
+                <section className={'m-auto px-12 py-4 rounded-lg backdrop-filter backdrop-blur-md bg-indigo-900 drop-shadow-2xl '}>
                     <Elements options={options} stripe={stripePromise}>
                         <CheckoutForm/>
                     </Elements>
