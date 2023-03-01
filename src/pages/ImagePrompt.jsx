@@ -21,7 +21,7 @@ const ImagePrompt = () => {
 
     return (
         <main className={'w-ful flex flex-col justify-center items-center h-screen'}>
-            <form className="p-8 m-auto items-center flex min-w-2/3 sm:w-2/3 mt-32" method="post"
+            <form className="p-8 m-auto items-center flex min-w-2/3 sm:w-2/3" method="post"
                   onSubmit={handleSubmit}>
                 <label htmlFor="text"
                        className="block w-full text-sm font-medium text-gray-900 dark:text-white">

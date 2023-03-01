@@ -13,20 +13,23 @@ const ImageGallery = () => {
     }, [])
 
     return (
-        <section className={'flex flex-col'}>
-            <article className={'mt-32 md:mx-14 flex flex-col sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-4 items-center justify-center'}>
-                {imageList.map((image, index) => {
-                    return (
-                        <a key={index} href={`https://dall-e-history.s3.eu-west-3.amazonaws.com/${image.key}`}
-                           rel={'noreferrer'}
-                           target={'_blank'}>
-                            <img className={'lg:hover:scale-110'} key={index}
-                                 src={`https://dall-e-history.s3.eu-west-3.amazonaws.com/${image.key}`}
-                                 alt={image[0]}/>
-                        </a>)
-                })}
-            </article>
-        </section>
+        <main className={'backdrop-filter backdrop-blur-md bg-transparent drop-shadow-2xl'}>
+            <section className={'flex flex-col'}>
+                <article
+                    className={'sm:m-14 flex flex-col sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-4 items-center justify-center'}>
+                    {imageList.map((image, index) => {
+                        return (
+                            <a key={index} href={`https://dall-e-history.s3.eu-west-3.amazonaws.com/${image.key}`}
+                               rel={'noreferrer'}
+                               target={'_blank'}>
+                                <img className={'lg:hover:scale-110'} key={index}
+                                     src={`https://dall-e-history.s3.eu-west-3.amazonaws.com/${image.key}`}
+                                     alt={image[0]}/>
+                            </a>)
+                    })}
+                </article>
+            </section>
+        </main>
     )
 }
 

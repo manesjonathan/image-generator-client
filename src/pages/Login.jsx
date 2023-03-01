@@ -1,7 +1,6 @@
-import axios from "axios";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {URL} from "../config/config.js";
+import {loginFunction} from "../config/config.js";
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -17,10 +16,7 @@ const Login = () => {
         }
 
         try {
-            axios.post(`${URL}/user/login`, user).then(res => {
-                localStorage.setItem("jwt", res.data);
-                navigate("/generate");
-            }).catch(() => {
+            loginFunction(user, navigate).catch(() => {
                 setError("Invalid email or password");
             })
         } catch (e) {
@@ -57,12 +53,12 @@ const Login = () => {
                             </button>
 
                             <p className="mt-8 text-sm text-gray-50 text-end">
-                                Don’t have an account yet? <a href="/signup" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
+                                Don’t have an account yet? <a href="/signup"
+                                                              className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
                                 up</a>
                             </p>
-
                             {error && (
-                                <p className="mt-4 text-sm text-bold text-black animate-bounce">{error}</p>
+                                <p className="mt-4 text-sm text-bold text-white animate-bounce">{error}</p>
                             )}
                         </form>
                     </div>
