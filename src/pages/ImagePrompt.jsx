@@ -20,7 +20,7 @@ const ImagePrompt = () => {
     }
 
     return (
-        <main className={'w-ful flex flex-col justify-center items-center h-screen'}>
+        <main className={'w-ful flex flex-col justify-center items-center h-screen-custom'}>
             <form className="p-8 m-auto items-center flex min-w-2/3 sm:w-2/3" method="post"
                   onSubmit={handleSubmit}>
                 <label htmlFor="text"
@@ -34,7 +34,7 @@ const ImagePrompt = () => {
                 </button>
             </form>
 
-            <article className={'w-full pb-14 flex flex-col items-center '}>
+            <article className={'w-full flex flex-col items-center '}>
                 {isLoading && <ClimbingBoxLoader className={"m-28"} color='#fff' size={30}/>}
 
                 {url && <img className={"m-auto shadow-xl "} width={512} height={512} src={url} alt=""/>}

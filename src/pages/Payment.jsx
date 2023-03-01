@@ -14,8 +14,9 @@ const Signup = () => {
         axios.post(`${URL}/create-payment-intent`, null, {
             params: {amount: 100},
         }).then(res => {
-            console.log(res.data)
-            setClientSecret(res.data)
+            let data = res.data;
+            console.log(data)
+            setClientSecret(data)
         });
 
     }, []);

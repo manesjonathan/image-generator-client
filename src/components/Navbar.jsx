@@ -44,6 +44,13 @@ export default function Navbar({fixed}) {
                                     <span className="ml-2">Gallery</span>
                                 </a>
                             </li>
+                            <li className="nav-item">
+                                <a
+                                    className="px-3 py-2 flex  text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    href="/payment">
+                                    <span className="ml-2">Refill</span>
+                                </a>
+                            </li>
                             <li className="nav-item ">
                                 <button
                                     className="text-white px-3 py-2 flex ml-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75"

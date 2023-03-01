@@ -8,6 +8,7 @@ const ImageGallery = () => {
     useEffect(() => {
         axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem("jwt");
         axios.get(`${URL}/image/get-history`).then(res => {
+            console.log('je passe ici')
             setImageList(res.data);
         });
     }, [])
