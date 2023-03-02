@@ -1,7 +1,7 @@
 import React from "react";
 import {FaBars} from "react-icons/fa";
 
-export default function Navbar({fixed}) {
+export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
 
     const handleClick = () => {
@@ -56,7 +56,6 @@ export default function Navbar({fixed}) {
                                     className="text-white px-3 py-2 flex ml-2 text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                                     onClick={handleClick}>Logout
                                 </button>
-
                             </li>
                         </ul>
                     </div>

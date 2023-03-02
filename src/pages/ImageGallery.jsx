@@ -19,14 +19,15 @@ const ImageGallery = () => {
                 <article
                     className={'sm:m-14 flex flex-col sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-4 items-center justify-center'}>
                     {imageList.map((image, index) => {
+                        let src = `https://dall-e-history.s3.eu-west-3.amazonaws.com/${image.key}`;
                         return (
-                            <a key={index} href={`https://dall-e-history.s3.eu-west-3.amazonaws.com/${image.key}`}
-                               rel={'noreferrer'}
-                               target={'_blank'}>
+
+                            <a key={index} href={`/view/${image.key}`}>
                                 <img className={'lg:hover:scale-110'} key={index}
-                                     src={`https://dall-e-history.s3.eu-west-3.amazonaws.com/${image.key}`}
+                                     src={src}
                                      alt={image[0]}/>
-                            </a>)
+                            </a>
+                        )
                     })}
                 </article>
             </section>

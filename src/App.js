@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import ImageGallery from "./pages/ImageGallery";
 import Signup from "./pages/Signup";
 import Refill from "./pages/Refill";
+import ImageFullScreen from "./components/ImageFullScreen";
 
 function App() {
     return (
@@ -29,6 +30,12 @@ function App() {
                     <PrivateRoute>
                         <Navbar/>
                         <ImageGallery/>
+                    </PrivateRoute>
+                }/>
+                <Route path={`/view/:id`} element={
+                    <PrivateRoute>
+                        <Navbar/>
+                        <ImageFullScreen/>
                     </PrivateRoute>
                 }/>
             </Routes>
