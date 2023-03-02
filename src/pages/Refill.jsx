@@ -10,7 +10,6 @@ const Signup = () => {
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
-        // Create PaymentIntent as soon as the page loads
         axios.post(`${URL}/create-payment-intent`, null, {
             params: {amount: 100},
         }).then(res => {
