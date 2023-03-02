@@ -11,14 +11,14 @@ const ImageFullScreen = () => {
         const [role, setRole] = useState(false);
 
         useEffect(() => {
-            let item = JSON.parse(localStorage.getItem("roles"));
-            console.log(item);
-            item.forEach(role => {
+            const roles = JSON.parse(localStorage.getItem("roles"));
+            roles.forEach(role => {
                 if (role.name === "ADMIN") {
                     setRole(true);
                 }
             });
         }, [role]);
+
         const handleDelete = () => {
             axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem("jwt");
             axios.delete(`${URL}/image/delete`, {
@@ -26,7 +26,6 @@ const ImageFullScreen = () => {
             }).then(() => {
                 navigate("/gallery");
             })
-            console.log('delete done')
         };
 
         return (
