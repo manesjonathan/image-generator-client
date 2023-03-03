@@ -3,7 +3,7 @@ import {useEffect} from "react";
 
 const PrivateRoute = (element) => {
     const navigate = useNavigate();
-    const isAuthenticated = !!localStorage.getItem("jwt"); // check if the user is authenticated
+    const isAuthenticated = !!localStorage.getItem("jwt");
 
     useEffect(() => {
         if (!isAuthenticated) {

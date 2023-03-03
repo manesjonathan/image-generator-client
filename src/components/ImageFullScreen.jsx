@@ -14,15 +14,21 @@ const ImageFullScreen = () => {
         const [role, setRole] = useState(false);
 
         useEffect(() => {
-            let item = JSON.parse(localStorage.getItem("roles"));
-            console.log(item);
-            item.forEach(role => {
+            const roles = JSON.parse(localStorage.getItem("roles"));
+            roles.forEach(role => {
                 if (role.name === "ADMIN") {
                     setRole(true);
                 }
             });
         }, [role]);
+
         const handleDelete = () => {
+            axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem("jwt");
+            axios.delete(`${URL}/image/delete`, {
+                params: {name: id}
+            }).then(() => {
+                navigate("/gallery");
+            })
             MySwal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
