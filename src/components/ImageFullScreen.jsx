@@ -3,8 +3,11 @@ import {useNavigate, useParams} from "react-router-dom";
 import {FaTrash} from "react-icons/fa"
 import axios from "axios";
 import {URL} from "../config/config";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const ImageFullScreen = () => {
+    const MySwal = withReactContent(Swal)
 
         const {id} = useParams();
         const navigate = useNavigate();
@@ -20,13 +23,34 @@ const ImageFullScreen = () => {
             });
         }, [role]);
         const handleDelete = () => {
-            axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem("jwt");
-            axios.delete(`${URL}/image/delete`, {
-                params: {name: id}
-            }).then(() => {
-                navigate("/gallery");
+            MySwal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem("jwt");
+                    axios.delete(`${URL}/image/delete`, {
+                        params: {name: id}
+                    }).then(() => {
+                        navigate("/gallery");
+                    })
+                    console.log('delete done')
+
+
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
             })
-            console.log('delete done')
+
         };
 
         return (
