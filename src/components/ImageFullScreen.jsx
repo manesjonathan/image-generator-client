@@ -23,12 +23,6 @@ const ImageFullScreen = () => {
         }, [role]);
 
         const handleDelete = () => {
-            axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem("jwt");
-            axios.delete(`${URL}/image/delete`, {
-                params: {name: id}
-            }).then(() => {
-                navigate("/gallery");
-            })
             MySwal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
