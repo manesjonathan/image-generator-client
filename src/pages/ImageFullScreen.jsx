@@ -40,8 +40,6 @@ const ImageFullScreen = () => {
                     }).then(() => {
                         navigate("/gallery");
                     })
-                    console.log('delete done')
-
 
                     Swal.fire(
                         'Deleted!',
@@ -65,7 +63,6 @@ const ImageFullScreen = () => {
                 </div>
             </section>
         );
-    }
-;
+    };
 
 export default ImageFullScreen;

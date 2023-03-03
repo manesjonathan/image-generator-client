@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import ImageGallery from "./pages/ImageGallery";
 import Signup from "./pages/Signup";
 import Refill from "./pages/Refill";
-import ImageFullScreen from "./components/ImageFullScreen";
+import ImageFullScreen from "./pages/ImageFullScreen";
 
 function App() {
     return (
